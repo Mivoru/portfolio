@@ -4,7 +4,7 @@
 <meta name="description" content="Portfolio Michala Votýpky: grafika, motion design a vlastní AI nástroje pro kreativní produkci.">
 <link rel="stylesheet" href="css/style.css"></head><body>
 <header class="top"><a href="#start" class="name">Michal Votýpka</a>
-<nav aria-label="Sekce"><a href="#koncept">Koncept</a><a href="#motion">Motion</a><a href="#workflow">AI workflow</a><a href="#grafika">Grafika</a><a href="#kontakt">Kontakt</a></nav></header>
+<nav aria-label="Sekce"><a href="#koncept">Koncept</a><a href="#sablona">Šablona</a><a href="#motion">Motion</a><a href="#workflow">AI workflow</a><a href="#grafika">Grafika</a><a href="#kontakt">Kontakt</a></nav></header>
 
 <main id="start">
 <section class="hero">
@@ -21,7 +21,7 @@
 <section id="koncept" class="block">
  <p class="tc">00:00:12:00 · 01 · Social media, motion, digital</p>
  <h2>„Ctrl+C, Ctrl+V není kariéra.“</h2>
- <p class="honest"><b>Poctivě:</b> tohle je můj neoficiální koncept, ne zakázka. Digitoo ho nezadalo ani neschválilo. Čísla jsem převzal z digitoo.ai, doklady jsou smyšlené a logo je jen sázený text.</p>
+ <p class="honest"><b>Poctivě:</b> tohle je můj neoficiální koncept, ne zakázka. Digitoo ho nezadalo ani neschválilo. Čísla jsem převzal z digitoo.ai, doklady jsou smyšlené a logo je jen sázený text. Vzniklo to ve spolupráci s AI agentem (Claude Code): agent psal kód a rendery, já vedl směr a vybíral výsledky.</p>
  <div class="two"><p>Účetní software obvykle mluví o efektivitě. Já bych mluvil o tom, co účetní opravdu štve: o přepisování. Kampaň je drzá k rutině, ne k účetním.</p>
  <p>Celý systém stojí na jednom prvku. Rohové závorky ukazují, jak se AI „zamkne“ na údaj z faktury, a stejný prvek funguje v příspěvku, ve videu i na landing page.</p></div>
  <h3>LinkedIn kampaň: 5 příspěvků</h3>
@@ -40,11 +40,50 @@
   <figure><video src="assets/video/promo.mp4" poster="assets/img/concept/promo_poster.jpg" controls playsinline preload="none"></video></figure>
   <div><h3>Promo video: 20 s, 120 BPM</h3>
   <p>Střih i zvuk sedí na stejnou mřížku. Rychlé údery kopírují rutinu, po slově „Stop“ přijde ticho a každý nalezený údaj má vlastní tón.</p>
-  <p>Animaci jsem napsal v HTML a vyrenderoval po snímcích. Zvuk je generovaný skriptem, takže video nepotřebuje žádnou licencovanou hudbu.</p>
+  <p>Animace je napsaná v HTML a vyrenderovaná po snímcích. Zvuk je generovaný skriptem, takže video nepotřebuje žádnou licencovanou hudbu.</p>
   <h3>Digital</h3>
   <ul class="links"><li><a href="concept/landing.html">Landing page (živé HTML, responzivní)</a></li><li><a href="concept/email.html">E-mailová šablona (tabulkový layout)</a></li></ul>
   <img loading="lazy" class="banner" src="assets/img/concept/b1.webp" alt="Banner na webinář: Uzávěrka bez přepisování"></div>
  </div>
+
+ <div class="gen" id="sablona">
+  <div><h3>Funkční šablona: vyzkoušejte si ji</h3>
+  <p>Inzerát chce šablony, tak tady jedna běží. Přepište text, změňte formát a stáhněte PNG. Velikost nadpisu se dopočítá sama, takže příspěvek drží systém i bez grafika.</p>
+  <form id="gen-form">
+   <label>Velké číslo (nepovinné)<input name="stat" value="97 %" maxlength="12"></label>
+   <label>Nadpis<textarea name="head" rows="3" maxlength="90">Faktury se přečtou samy.</textarea></label>
+   <label>Podtitulek<input name="sub" value="Bez šablon a počátečního nastavení." maxlength="90"></label>
+   <label>Formát<select name="format"><option value="post">LinkedIn 4:5</option><option value="square">Čtverec 1:1</option><option value="story">Story 9:16</option></select></label>
+   <fieldset><legend>Barva</legend>
+    <label class="sw"><input type="radio" name="theme" value="blue" checked><span style="background:#006FF7"></span>Modrá</label>
+    <label class="sw"><input type="radio" name="theme" value="orange"><span style="background:#FC5E22"></span>Oranžová</label>
+    <label class="sw"><input type="radio" name="theme" value="navy"><span style="background:#1F2F45"></span>Tmavá</label>
+    <label class="sw"><input type="radio" name="theme" value="pink"><span style="background:#FF78E6"></span>Růžová</label>
+   </fieldset>
+   <button type="button" class="cta" id="gen-save">Stáhnout PNG</button>
+  </form></div>
+  <canvas id="gen-canvas" width="1080" height="1350" aria-label="Náhled příspěvku"></canvas>
+ </div>
+
+ <h3>Print a dárek: krabice od bot, která je pointa</h3>
+ <div class="split">
+  <figure><img loading="lazy" src="assets/img/3d/gift_flat.webp" alt="3D vizualizace dárkové krabice s hrnkem, zápisníkem a nálepkami"></figure>
+  <div><p>Dárek pro klienty navazuje na příspěvek „Krabice od bot není archiv“. Přijde v krabici s nápisem ÚČTO 2019 (?) a uvnitř je zápisník, hrnek a arch nálepek.</p>
+  <p>Grafika vznikla jako tiskové podklady a scéna je postavená a vyrenderovaná skriptem v Blenderu. Tiskové podklady slouží zároveň jako textury 3D scény.</p>
+  <img loading="lazy" class="banner" style="max-width:420px" src="assets/img/3d/key_flat.webp" alt="3D key visual: faktury vylétají z krabice, jednu zaměřují rohové závorky"></div>
+ </div>
+
+ <h3>Jak bych měřil, jestli kampaň funguje</h3>
+ <div class="table-wrap"><table>
+  <thead><tr><th>Příspěvek</th><th>Hypotéza</th><th>Hlavní metrika</th></tr></thead>
+  <tbody>
+  <tr><td>Ctrl+C. Ctrl+V.</td><td>Drzý humor si účetní přepošlou mezi sebou.</td><td>Sdílení a komentáře na 1 000 zobrazení</td></tr>
+  <tr><td>97 %</td><td>Konkrétní číslo přivede lidi s reálným zájmem.</td><td>Míra prokliku na demo</td></tr>
+  <tr><td>Nikdo nesáhl</td><td>Ukázka faktury vysvětlí produkt bez textu.</td><td>Dokoukání a čas na příspěvku</td></tr>
+  <tr><td>400+ hodin</td><td>Reference osloví manažery, ne jen účetní.</td><td>Podíl manažerských rolí v zásahu</td></tr>
+  <tr><td>Karusel</td><td>Lidé dojdou až na poslední slide s postupem.</td><td>Podíl dokončení karuselu</td></tr>
+  </tbody></table></div>
+ <p class="small">Plán před spuštěním, ne výsledky. Každý příspěvek testuje jednu věc a vítěznou variantu bych rozvinul do další série.</p>
 </section>
 
 <section id="motion" class="block dark">
@@ -101,4 +140,4 @@
 </section>
 </main>
 <footer class="foot">© 2026 Michal Votýpka · Digitoo je značka svého vlastníka. Tento web s ní není nijak spojen.</footer>
-<script src="js/main.js"></script></body></html>
+<script src="js/main.js"></script><script src="js/generator.js"></script></body></html>

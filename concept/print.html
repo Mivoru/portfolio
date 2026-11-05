@@ -1,0 +1,44 @@
+<!doctype html><html lang="cs"><head><meta charset="utf-8"><title>Spec concept: print</title>
+<link rel="stylesheet" href="brand.css">
+<style>
+body{background:#333;display:flex;flex-wrap:wrap;gap:40px;padding:40px}
+.t{position:relative;overflow:hidden;flex:none}
+.tag{position:absolute;font-family:var(--mono);font-weight:500;letter-spacing:.04em;text-transform:uppercase}
+h2{font-weight:800;letter-spacing:-.045em;line-height:.94}
+.wm{font-weight:800;letter-spacing:-.04em}
+#label{width:900px;height:500px;background:#fff;padding:44px 52px;color:var(--ink)}
+#label b{display:block;font-family:var(--mono);font-weight:500;font-size:96px;letter-spacing:-.02em;margin-top:34px}
+#label p{font-size:44px;font-weight:700;letter-spacing:-.03em;margin-top:26px}
+#label .tag{left:52px;bottom:34px;font-size:22px;opacity:.7}
+#notebook{width:1000px;height:1400px;background:var(--blue);color:#fff;padding:80px}
+#notebook h2{font-size:172px}#notebook h2 em{font-style:normal;color:var(--pink-soft)}
+#notebook .wm{position:absolute;left:80px;bottom:76px;font-size:72px}
+#notebook .tag{right:80px;bottom:84px;font-size:24px;opacity:.8}
+#mug{width:2400px;height:1000px;background:var(--orange);color:var(--ink)}
+#mug h2{position:absolute;left:800px;top:290px;font-size:170px;width:860px;color:#fff}
+#mug .r{position:absolute;left:800px;top:90px;font-size:104px;font-weight:800;letter-spacing:-.05em;opacity:.35}
+#mug .wm{position:absolute;left:800px;bottom:110px;font-size:72px}
+#stickers{width:1000px;height:1400px;background:#fff}
+.st{position:absolute;display:grid;place-items:center;font-weight:800;letter-spacing:-.04em;text-align:center;line-height:.95}
+#stickers .tag{left:60px;bottom:40px;font-size:22px;color:var(--navy);opacity:.7}
+#invoice{width:1000px;height:1400px;background:#fff;padding:80px;font-family:var(--mono);font-weight:500;font-size:34px;color:var(--navy)}
+#invoice .hd{font-family:var(--display);font-weight:800;font-size:76px;letter-spacing:-.03em;margin-bottom:50px;color:var(--ink)}
+#invoice .r{display:flex;justify-content:space-between;padding:32px 0;border-bottom:3px solid #E6EEFF}
+#invoice .l{opacity:.55}
+#invoice .sum{position:absolute;left:80px;right:80px;bottom:90px;background:var(--paper);padding:40px;font-size:50px;display:flex;justify-content:space-between}
+</style></head><body>
+<section class="t" id="label"><div class="wm" style="font-size:52px">digitoo</div><b>ÚČTO 2019 (?)</b><p>Tohle už není archiv.</p><span class="tag">neoficiální koncept</span></section>
+<section class="t" id="notebook"><h2>Sem si piš <em>nápady.</em> Faktury ne.</h2><span class="wm">digitoo</span><span class="tag">neoficiální koncept</span></section>
+<section class="t" id="mug"><div class="r">Ctrl+C. Ctrl+V.</div><h2>Tohle není kariéra.</h2><span class="wm">digitoo</span></section>
+<section class="t" id="stickers">
+ <div class="st" style="left:60px;top:60px;width:420px;height:420px;border-radius:50%;background:var(--blue);color:#fff;font-size:150px">97 %</div>
+ <div class="st" style="left:520px;top:80px;width:420px;height:300px;background:var(--orange);color:var(--ink);font-size:82px;transform:rotate(4deg)">Ctrl+V?<br>Ne.</div>
+ <div class="st" style="left:60px;top:540px;width:880px;height:230px;background:var(--navy);color:#fff;font-size:92px">Nikdo nesáhl.</div>
+ <div class="st" style="left:60px;top:830px;width:400px;height:400px;background:var(--pink);color:var(--ink);font-size:74px;transform:rotate(-4deg)">Krabice od bot není archiv</div>
+ <div class="st" style="left:520px;top:850px;width:420px;height:360px;background:var(--paper);color:var(--blue);font-size:88px;border:8px solid var(--blue)">Uzávěrka v klidu</div>
+ <span class="tag">neoficiální koncept · digitoo</span>
+</section>
+<section class="t" id="invoice"><div class="hd">Faktura 2026-0418</div>
+ <div class="r"><span class="l">Dodavatel</span><span>Vzorová dílna s.r.o.</span></div><div class="r"><span class="l">IČO</span><span>12345678</span></div><div class="r"><span class="l">Splatnost</span><span>14. 12. 2026</span></div><div class="r"><span class="l">Předkontace</span><span>518 / služby</span></div><div class="r"><span class="l">Položky</span><span>3</span></div>
+ <div class="sum"><span>Celkem</span><span>48 912,50 Kč</span></div></section>
+</body></html>

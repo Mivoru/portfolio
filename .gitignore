@@ -3,3 +3,4 @@ __pycache__/
 *.wav
 node_modules/
 .env
+assets/img/3d/*.png
