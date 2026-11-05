@@ -14,6 +14,7 @@ players.forEach((video) => video.addEventListener('play', () => {
 
 // Image rails: slow drift on their own, and with a mouse the rail follows the cursor.
 // Left of centre pans left, right of centre pans right, the middle stays still.
+// Speed grows steeply towards the edge, and the rail brakes before it hits an end.
 // Touch keeps native swiping. Reduced motion keeps manual scrolling only.
 const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const mouse = matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -26,7 +27,7 @@ document.querySelectorAll('[data-pan]').forEach((rail) => {
   rail.after(meter);
 
   const DRIFT = 26;      // px per second on its own
-  const MAX_SPEED = 900; // px per second at the rail's edge
+  const MAX_SPEED = 2600; // px per second at the rail's edge
   let pos = 0;
   let dir = 1;
   let hover = null;      // cursor position from -1 to 1 while hovering
@@ -48,18 +49,24 @@ document.querySelectorAll('[data-pan]').forEach((rail) => {
     const max = rail.scrollWidth - rail.clientWidth;
     let target = 0;
     if (hover !== null) {
-      const dead = 0.18;
-      const push = Math.max(0, Math.abs(hover) - dead) / (1 - dead);
-      target = Math.sign(hover) * push * push * MAX_SPEED;
+      const dead = 0.1;
+      const full = 0.92; // cursor position where top speed is reached
+      const push = Math.min(1, Math.max(0, Math.abs(hover) - dead) / (full - dead));
+      target = Math.sign(hover) * (0.12 * push + 0.88 * push ** 3) * MAX_SPEED;
     } else if (!calm && now > heldUntil) {
       target = dir * DRIFT;
     }
-    speed += (target - speed) * Math.min(1, dt * 7);
+    speed += (target - speed) * (1 - Math.exp(-dt * (hover === null ? 4 : 9)));
     if (max > 0 && Math.abs(speed) > 0.5) {
-      pos = Math.max(0, Math.min(max, pos + speed * dt));
+      const room = speed > 0 ? max - pos : pos;
+      const brake = Math.min(1, 0.1 + room / 160);
+      pos = Math.max(0, Math.min(max, pos + speed * brake * dt));
       if (pos <= 0) dir = 1;
       if (pos >= max) dir = -1;
-      rail.scrollLeft = pos;
+      // scrollLeft snaps to whole pixels, so the remainder moves the images instead.
+      const whole = Math.round(pos);
+      rail.scrollLeft = whole;
+      rail.style.setProperty('--frac', `${whole - pos}px`);
     }
     paint();
     if (visible) requestAnimationFrame(frame);
@@ -86,7 +93,10 @@ document.querySelectorAll('[data-pan]').forEach((rail) => {
   const hold = () => { heldUntil = performance.now() + 2500; speed = 0; };
   ['wheel', 'touchstart', 'keydown'].forEach((type) => rail.addEventListener(type, hold, { passive: true }));
   rail.addEventListener('scroll', () => {
-    if (Math.abs(rail.scrollLeft - pos) > 2) pos = rail.scrollLeft;
+    if (Math.abs(rail.scrollLeft - pos) > 2) {
+      pos = rail.scrollLeft;
+      rail.style.setProperty('--frac', '0px');
+    }
     paint();
   }, { passive: true });
   addEventListener('resize', paint);
