@@ -1,0 +1,72 @@
+<!doctype html><html lang="cs"><head><meta charset="utf-8"><title>Spec concept: display ads and slide</title>
+<link rel="stylesheet" href="brand.css">
+<style>
+body{background:#333;display:flex;flex-wrap:wrap;gap:40px;padding:40px;align-items:flex-start}
+.ad,.slide{position:relative;overflow:hidden;flex:none}
+.pill{display:inline-block;background:var(--orange);color:var(--ink);font-weight:700;white-space:nowrap}
+.tag{font-family:var(--mono);font-weight:500;font-size:8px;letter-spacing:.04em;text-transform:uppercase;opacity:.75;line-height:1.3}
+h2{font-weight:800;letter-spacing:-.045em;line-height:.94}
+#a300{width:300px;height:250px;background:var(--blue);color:#fff;padding:18px}
+#a300 .chip{--s:10px;--w:3px;display:inline-block;background:#fff;color:var(--ink);font-family:var(--mono);font-weight:500;font-size:11px;padding:6px 9px;margin:4px 0 0 4px}
+#a300 .big{font-size:96px;font-weight:800;letter-spacing:-.06em;line-height:.95;margin-top:10px}
+#a300 .big span{font-size:52px;color:var(--pink-soft)}
+#a300 p{font-size:17px;font-weight:700;letter-spacing:-.02em;margin-top:2px}
+#a300 .row{position:absolute;left:18px;right:18px;bottom:14px;display:flex;justify-content:space-between;align-items:flex-end}
+#a300 .pill{font-size:13px;padding:7px 11px}
+#a728{width:728px;height:90px;background:var(--navy);color:#fff;display:flex;align-items:center;gap:22px;padding:0 20px}
+#a728 .wordmark{font-size:24px}
+#a728 h2{font-size:31px;flex:1;white-space:nowrap}#a728 h2 em{font-style:normal;color:var(--orange)}
+#a728 .pill{font-size:14px;padding:9px 13px}
+#a728 .tag{position:absolute;right:20px;bottom:5px}
+#a160{width:160px;height:600px;background:var(--orange);color:var(--ink);padding:16px 14px}
+#a160 .rows{font-weight:800;font-size:27px;letter-spacing:-.05em;line-height:1.02}
+#a160 .rows div:nth-child(1),#a160 .rows div:nth-child(2){opacity:.2}#a160 .rows div:nth-child(3),#a160 .rows div:nth-child(4){opacity:.35}#a160 .rows div:nth-child(5),#a160 .rows div:nth-child(6){opacity:.6}
+#a160 h2{font-size:38px;color:#fff;margin-top:20px}
+#a160 p{font-size:15px;font-weight:500;line-height:1.2;margin-top:14px}
+#a160 .end{position:absolute;left:14px;right:14px;bottom:14px}
+#a160 .pill{background:var(--ink);color:#fff;font-size:13px;padding:9px 11px}
+#a160 .wordmark{display:block;font-size:24px;margin-top:16px}
+#a160 .tag{margin-top:4px}
+.slide{width:1920px;height:1080px;background:var(--paper);padding:96px 110px}
+.slide .k{font-family:var(--mono);font-weight:500;font-size:24px;color:var(--blue)}
+.slide h2{font-size:132px;margin-top:30px;max-width:1500px}.slide h2 em{font-style:normal;color:var(--blue)}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:88px}
+.cols div{border-top:8px solid var(--orange);padding-top:24px}
+.cols b{display:block;font-size:44px;font-weight:800;letter-spacing:-.03em}
+.cols p{font-size:30px;line-height:1.3;font-weight:500;margin-top:12px}
+.slide .foot{position:absolute;left:110px;right:110px;bottom:64px;display:flex;justify-content:space-between;align-items:flex-end}
+.slide .wordmark{font-size:46px}.slide .spec{font-size:19px;opacity:.75;text-align:right;line-height:1.4}
+</style></head><body>
+
+<section class="ad" id="a300">
+ <div class="chip scan">48 912,50 Kč</div>
+ <div class="big">97<span> %</span></div>
+ <p>přesnost čtení faktur</p>
+ <div class="row"><span class="pill">Vyzkoušet demo</span><span class="tag" style="text-align:right">neoficiální<br>koncept</span></div>
+</section>
+
+<section class="ad" id="a728">
+ <span class="wordmark">digitoo</span>
+ <h2>Uzávěrka bez <em>přepisování.</em></h2>
+ <span class="pill">Rezervovat místo</span>
+ <span class="tag">neoficiální koncept</span>
+</section>
+
+<section class="ad" id="a160">
+ <div class="rows"><div>Ctrl+C.</div><div>Ctrl+V.</div><div>Ctrl+C.</div><div>Ctrl+V.</div><div>Ctrl+C.</div><div>Ctrl+V.</div></div>
+ <h2>Tohle není kariéra.</h2>
+ <p>Přepisování faktur nechte AI.</p>
+ <div class="end"><span class="pill">Vyzkoušet demo</span><span class="wordmark">digitoo</span><div class="tag">neoficiální koncept</div></div>
+</section>
+
+<section class="slide" id="s1">
+ <div class="k">Kampaň „Ctrl+C, Ctrl+V“ · strategie</div>
+ <h2>Problém je přepisování. <em>Ne účetní.</em></h2>
+ <div class="cols">
+  <div><b>Postřeh</b><p>Účetní software mluví o efektivitě. Účetní štve rutina.</p></div>
+  <div><b>Prvek</b><p>Rohové závorky ukazují, jak se AI zamkne na údaj z faktury.</p></div>
+  <div><b>Měření</b><p>Každý příspěvek testuje jednu hypotézu a jednu metriku.</p></div>
+ </div>
+ <div class="foot"><span class="wordmark">digitoo</span><span class="spec">neoficiální koncept<br>Michal Votýpka</span></div>
+</section>
+</body></html>

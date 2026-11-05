@@ -68,7 +68,7 @@ if (!still) {
     seen.observe(heading);
   });
 
-  const parts = '.block .tc, .block h3, .honest, .two>p, .big-note, .small, .rail, .rail-meter, .split>*, .gen, .table-wrap, .stats>div, .clips>figure, .flow>li, .three>div, .contact';
+  const parts = '.block .tc, .block h3, .ads>img, .honest, .two>p, .big-note, .small, .rail, .rail-meter, .split>*, .gen, .table-wrap, .stats>div, .clips>*, .flow>li, .three>div, .contact';
   const order = new Map();
   document.querySelectorAll(parts).forEach((part) => {
     const index = order.get(part.parentElement) || 0;
