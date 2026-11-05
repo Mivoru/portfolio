@@ -1,0 +1,113 @@
+<!doctype html><html lang="cs"><head><meta charset="utf-8"><title>Spec concept: social</title>
+<link rel="stylesheet" href="brand.css">
+<style>
+body{background:#333;display:flex;flex-wrap:wrap;gap:40px;padding:40px}
+.ab{width:1080px;height:1350px;position:relative;overflow:hidden;padding:72px;display:flex;flex-direction:column;flex:none}
+.foot{position:absolute;left:72px;right:72px;bottom:56px;display:flex;justify-content:space-between;align-items:flex-end}
+.foot .wordmark{font-size:46px}.foot .spec{font-size:19px;opacity:.75;text-align:right;line-height:1.4}
+h2{font-weight:800;letter-spacing:-.045em;line-height:.94}
+.sub{font-size:42px;line-height:1.16;font-weight:500;letter-spacing:-.02em}
+#p1{background:var(--orange);color:var(--ink)}
+#p1 .rows{font-weight:800;font-size:150px;letter-spacing:-.05em;line-height:.98;white-space:nowrap}
+#p1 .rows div:nth-child(1){opacity:.16}#p1 .rows div:nth-child(2){opacity:.26}#p1 .rows div:nth-child(3){opacity:.4}#p1 .rows div:nth-child(4){opacity:.62}
+#p1 h2{font-size:150px;color:#fff;margin-top:34px}
+#p1 .sub{margin-top:36px;max-width:800px}
+#p2{background:var(--blue);color:#fff}
+#p2 .big{font-size:500px;font-weight:800;letter-spacing:-.07em;line-height:.9;margin:34px 0 0 -14px}
+#p2 .big span{font-size:270px;color:var(--pink-soft)}
+#p2 .sub{font-size:76px;font-weight:700;letter-spacing:-.03em;line-height:1.04;margin-top:44px}
+#p2 .chip{align-self:flex-start;background:#fff;color:var(--ink);padding:26px 34px;font-family:var(--mono);font-weight:500;font-size:34px;--c:var(--orange);margin:12px 0 0 14px}
+#p2 .src{font-family:var(--mono);font-weight:500;font-size:20px;margin-top:30px;opacity:.8}
+#p3{background:var(--paper)}
+#p3 h2{font-size:112px}#p3 h2 em{font-style:normal;color:var(--blue)}
+.inv{background:#fff;margin-top:60px;padding:48px 52px;box-shadow:0 24px 70px rgba(16,27,43,.13);transform:rotate(-1.6deg);font-family:var(--mono);font-weight:500;font-size:29px;color:var(--navy)}
+.inv .r{display:flex;justify-content:space-between;align-items:center;padding:21px 0;border-bottom:2px solid #E6EEFF}.inv .r:last-child{border:0}
+.inv .l{opacity:.55}.inv .v{padding:5px 12px}
+.inv .hd{font-family:var(--display);font-weight:800;font-size:50px;letter-spacing:-.03em;margin-bottom:16px}
+#p3 .v.scan{--s:18px;--w:5px}#p3 .v.b{--c:var(--blue)}#p3 .v.p{--c:#E23FC4}
+#p4{background:var(--navy);color:#fff}
+#p4 .k{font-size:44px;font-weight:600;letter-spacing:-.02em;color:var(--sky)}
+#p4 .big{font-size:400px;font-weight:800;letter-spacing:-.07em;line-height:.92;color:var(--orange);margin:30px 0 0 -10px}
+#p4 h2{font-size:122px;margin-top:10px}
+#p4 .stats{display:flex;gap:64px;margin-top:64px;border-top:3px solid rgba(255,255,255,.22);padding-top:34px}
+#p4 .stats b{display:block;font-size:92px;letter-spacing:-.04em;font-weight:800}#p4 .stats span{font-size:34px;color:var(--sky);font-weight:500}
+#p4 .src{font-family:var(--mono);font-weight:500;font-size:20px;margin-top:34px;opacity:.65}
+#p5{background:var(--pink);color:var(--ink)}
+#p5 h2{font-size:178px}
+.box{position:absolute;right:-30px;bottom:190px;width:650px;height:430px;background:#C98A4F;transform:rotate(-5deg);box-shadow:inset 0 74px 0 #B5763D}
+.box::before{content:"";position:absolute;left:44%;top:0;width:12%;height:100%;background:#E7C89E;opacity:.75}
+.box::after{content:"ÚČTO 2019 (?)";position:absolute;left:44px;top:170px;font-family:var(--mono);font-weight:500;font-size:44px;color:var(--ink);background:#fff;padding:12px 18px;transform:rotate(1.6deg)}
+.sheet{position:absolute;width:280px;height:330px;background:#fff;box-shadow:0 10px 30px rgba(16,27,43,.2)}
+.sheet i{position:absolute;left:30px;height:13px;background:#D7E3F4}
+#p5 .sub{position:absolute;left:72px;bottom:190px;width:330px;font-weight:700;font-size:40px}
+.c{background:var(--paper)}
+.c.dark{background:var(--blue);color:#fff}
+.c .n{font-family:var(--mono);font-weight:500;font-size:30px;opacity:.65}
+.c h2{font-size:176px;margin-top:30px}
+.c .sub{font-size:56px;margin-top:44px;max-width:900px;line-height:1.12}
+.c .rail{position:absolute;left:0;right:0;top:1090px;height:14px;background:var(--orange)}
+.c.first .rail{left:540px}.c.last .rail{right:540px}
+.c .dot{position:absolute;left:460px;top:1017px;width:160px;height:160px;border-radius:50%;background:var(--orange);display:grid;place-items:center;color:#fff;font-weight:800;font-size:76px;letter-spacing:-.04em}
+.c .cap{position:absolute;left:72px;right:72px;top:1212px;text-align:center;font-family:var(--mono);font-weight:500;font-size:30px;line-height:1.35}
+.bn{width:1200px;height:627px;position:relative;overflow:hidden;background:var(--navy);color:#fff;padding:56px 60px;display:flex;flex-direction:column;justify-content:space-between;flex:none}
+.bn h2{font-size:92px;max-width:900px}.bn h2 em{font-style:normal;color:var(--orange)}
+.bn .row{display:flex;justify-content:space-between;align-items:flex-end}
+.bn .k{font-family:var(--mono);font-weight:500;font-size:24px;color:var(--sky)}
+.bn .wordmark{font-size:42px}.bn .spec{font-size:17px;opacity:.7}
+.bn .pill{background:var(--orange);color:var(--ink);font-weight:700;font-size:30px;padding:14px 26px}
+</style></head><body>
+
+<section class="ab" id="p1">
+ <div class="rows"><div>Ctrl+C. Ctrl+V.</div><div>Ctrl+C. Ctrl+V.</div><div>Ctrl+C. Ctrl+V.</div><div>Ctrl+C. Ctrl+V.</div></div>
+ <h2>Tohle není kariéra.</h2>
+ <p class="sub">Přepisování faktur nechte AI. Vy dělejte účetnictví.</p>
+ <div class="foot"><span class="wordmark">digitoo</span><span class="spec">neoficiální koncept<br>Michal Votýpka</span></div>
+</section>
+
+<section class="ab" id="p2">
+ <div class="chip scan">Celkem s DPH: 48 912,50 Kč</div>
+ <div class="big">97<span> %</span></div>
+ <p class="sub">přesnost čtení faktur.<br>Bez šablon. Bez nastavování.</p>
+ <p class="src">Údaj: digitoo.ai</p>
+ <div class="foot"><span class="wordmark">digitoo</span><span class="spec">neoficiální koncept<br>Michal Votýpka</span></div>
+</section>
+
+<section class="ab" id="p3">
+ <h2>Faktura, na kterou <em>nikdo nesáhl.</em></h2>
+ <div class="inv">
+  <div class="hd">Faktura 2026-0418</div>
+  <div class="r"><span class="l">Dodavatel</span><span class="v scan b">Vzorová dílna s.r.o.</span></div>
+  <div class="r"><span class="l">IČO</span><span class="v scan">12345678</span></div>
+  <div class="r"><span class="l">Splatnost</span><span class="v scan p">14. 12. 2026</span></div>
+  <div class="r"><span class="l">Předkontace</span><span class="v scan b">518 / služby</span></div>
+  <div class="r"><span class="l">Celkem</span><span class="v scan">48 912,50 Kč</span></div>
+ </div>
+ <div class="foot"><span class="wordmark">digitoo</span><span class="spec">neoficiální koncept<br>ilustrační data</span></div>
+</section>
+
+<section class="ab" id="p4">
+ <div class="k">Liftago a faktury</div>
+ <div class="big">400+</div>
+ <h2>hodin ročně zpátky.</h2>
+ <div class="stats"><div><b>−80 %</b><span>času na zpracování</span></div><div><b>140 000 Kč</b><span>úspora za rok</span></div></div>
+ <p class="src">Údaje: případová studie na digitoo.ai</p>
+ <div class="foot"><span class="wordmark">digitoo</span><span class="spec">neoficiální koncept<br>Michal Votýpka</span></div>
+</section>
+
+<section class="ab" id="p5">
+ <h2>Krabice od bot není archiv.</h2>
+ <div class="sheet" style="right:320px;bottom:430px;transform:rotate(-12deg)"><i style="top:40px;width:150px"></i><i style="top:90px;width:230px"></i><i style="top:130px;width:200px"></i></div>
+ <div class="sheet" style="right:80px;bottom:440px;transform:rotate(8deg)"><i style="top:40px;width:170px"></i><i style="top:90px;width:220px"></i><i style="top:130px;width:190px"></i></div>
+ <div class="box"></div>
+ <p class="sub">Každý doklad dohledatelný za pár vteřin.</p>
+ <div class="foot"><span class="wordmark">digitoo</span><span class="spec">neoficiální koncept<br>Michal Votýpka</span></div>
+</section>
+
+<section class="ab c dark first" id="c1"><span class="n">1 / 5</span><h2 style="font-size:150px">Jak faktura cestuje bez vás.</h2><p class="sub">Čtyři zastávky. Ani jedna nepotřebuje přepisování.</p><div class="rail"></div><div class="cap" style="color:#fff">přejeďte dál →</div></section>
+<section class="ab c" id="c2"><span class="n">2 / 5</span><h2>Přijde.</h2><p class="sub">Z e-mailu se vytřídí jen faktury a jejich přílohy.</p><div class="rail"></div><div class="dot">1</div><div class="cap">třídění pošty</div></section>
+<section class="ab c" id="c3"><span class="n">3 / 5</span><h2>Přečte se.</h2><p class="sub">AI vytáhne údaje bez šablon a počátečního nastavení.</p><div class="rail"></div><div class="dot">2</div><div class="cap">vytěžení dat</div></section>
+<section class="ab c" id="c4"><span class="n">4 / 5</span><h2>Schválí se.</h2><p class="sub">Doklad dojde správnému člověku. Další v řadě dostane upozornění.</p><div class="rail"></div><div class="dot">3</div><div class="cap">vícestupňové schvalování</div></section>
+<section class="ab c last" id="c5"><span class="n">5 / 5</span><h2>Zaúčtuje se.</h2><p class="sub">Rovnou do vašeho systému. Pohoda, Abra, Helios, SAP.</p><div class="rail"></div><div class="dot">4</div><div class="cap">digitoo · neoficiální koncept</div></section>
+
+<section class="bn" id="b1"><div class="k">WEBINÁŘ · ČT 14:00 · ONLINE</div><h2>Uzávěrka bez <em>přepisování.</em></h2><div class="row"><span class="wordmark">digitoo</span><span class="pill">Rezervovat místo</span></div><div class="spec" style="position:absolute;right:60px;top:60px">neoficiální koncept</div></section>
+</body></html>

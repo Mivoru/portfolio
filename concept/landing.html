@@ -1,0 +1,31 @@
+<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Landing page koncept</title>
+<link rel="stylesheet" href="brand.css">
+<style>
+body{background:var(--paper)}
+.note{background:var(--ink);color:#fff;font-family:var(--mono);font-weight:500;font-size:13px;padding:10px 16px;text-align:center}
+nav{display:flex;justify-content:space-between;align-items:center;max-width:1160px;margin:auto;padding:24px}
+nav .wordmark{font-size:30px}.btn{display:inline-block;background:var(--orange);color:var(--ink);font-weight:700;padding:14px 22px;text-decoration:none}
+.hero{max-width:1160px;margin:auto;padding:56px 24px 72px;display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center}
+h1{font-size:clamp(52px,7.4vw,104px);font-weight:800;letter-spacing:-.05em;line-height:.94}h1 em{font-style:normal;color:var(--blue)}
+.lead{font-size:22px;line-height:1.35;margin:26px 0 30px;max-width:30em;font-weight:500}
+.inv{background:#fff;padding:30px 32px;box-shadow:0 24px 70px rgba(16,27,43,.13);font-family:var(--mono);font-weight:500;font-size:15px;color:var(--navy)}
+.inv .r{display:flex;justify-content:space-between;padding:15px 0;border-bottom:2px solid #E6EEFF}.inv .r:last-child{border:0}
+.inv span:first-child{opacity:.55}.inv .scan{--s:13px;--w:3px;padding:0 6px}
+.band{background:var(--blue);color:#fff}
+.stats{max-width:1160px;margin:auto;padding:48px 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.stats b{display:block;font-size:clamp(44px,6vw,76px);font-weight:800;letter-spacing:-.05em;line-height:1}.stats span{font-size:18px;font-weight:500}
+.steps{max-width:1160px;margin:auto;padding:80px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.steps h2{grid-column:1/-1;font-size:clamp(36px,5vw,60px);font-weight:800;letter-spacing:-.04em;margin-bottom:16px}
+.steps div{border-top:6px solid var(--orange);padding-top:16px}.steps h3{font-size:26px;letter-spacing:-.03em}.steps p{margin-top:8px;line-height:1.4}
+footer{background:var(--navy);color:#fff;text-align:center;padding:64px 24px}footer h2{font-size:clamp(34px,5vw,60px);font-weight:800;letter-spacing:-.04em;margin-bottom:24px}
+@media(max-width:820px){.hero{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr}}
+@media(max-width:480px){.steps{grid-template-columns:1fr}}
+</style></head><body>
+<div class="note">Neoficiální koncept Michala Votýpky. Nevzniklo pro Digitoo ani s Digitoo. Tlačítka nikam nevedou.</div>
+<nav><span class="wordmark">digitoo</span><a class="btn" href="#">Vyzkoušet demo</a></nav>
+<section class="hero"><div><h1>Přepisování faktur <em>končí.</em></h1><p class="lead">AI přečte doklad, pošle ho ke schválení a zaúčtuje do vašeho systému. Bez šablon a počátečního nastavení.</p><a class="btn" href="#">Začít zdarma</a></div>
+<div class="inv"><div class="r"><span>Dodavatel</span><span class="scan" style="--c:var(--blue)">Vzorová dílna s.r.o.</span></div><div class="r"><span>IČO</span><span class="scan">12345678</span></div><div class="r"><span>Splatnost</span><span class="scan" style="--c:#E23FC4">14. 12. 2026</span></div><div class="r"><span>Celkem</span><span class="scan">48 912,50 Kč</span></div></div></section>
+<section class="band"><div class="stats"><div><b>97 %</b><span>přesnost čtení faktur</span></div><div><b>7 300+</b><span>zákazníků</span></div><div><b>400+ h</b><span>ročně ušetřilo Liftago</span></div></div></section>
+<section class="steps"><h2>Čtyři zastávky, nula přepisování.</h2><div><h3>Přijde</h3><p>Z pošty se vytřídí jen faktury a přílohy.</p></div><div><h3>Přečte se</h3><p>AI vytáhne údaje bez šablon.</p></div><div><h3>Schválí se</h3><p>Doklad dojde správnému člověku.</p></div><div><h3>Zaúčtuje se</h3><p>Pohoda, Abra, Helios, SAP a další.</p></div></section>
+<footer><h2>Uzávěrka bez přepisování.</h2><a class="btn" href="#">Vyzkoušet demo</a><p class="spec" style="margin-top:28px;font-size:12px;opacity:.7">Údaje převzaty z veřejného webu digitoo.ai</p></footer>
+</body></html>

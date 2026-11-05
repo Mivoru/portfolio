@@ -1,0 +1,5 @@
+tools/frames/
+__pycache__/
+*.wav
+node_modules/
+.env
